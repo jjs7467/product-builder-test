@@ -1,5 +1,10 @@
 const generateBtn = document.getElementById('generate-btn');
 const numbersContainer = document.getElementById('numbers-container');
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
+});
 
 const ballColors = [
     '#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
