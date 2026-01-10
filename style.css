@@ -129,6 +129,26 @@ h1 {
     box-shadow: 0 4px 15px rgba(74, 144, 226, 0.6);
 }
 
+.contact-button {
+    display: inline-block; /* Treat anchor like a block element for padding/margin */
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(245, 166, 35, 0.4);
+    text-decoration: none; /* Remove underline from link */
+    margin-top: 1rem; /* Add some space above the button */
+}
+
+.contact-button:hover {
+    background-color: #e09b1f;
+    box-shadow: 0 4px 15px rgba(245, 166, 35, 0.6);
+}
+
 /* Responsive Styles */
 @media (max-width: 600px) {
     .container {
