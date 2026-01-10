@@ -1,5 +1,6 @@
 const generateBtn = document.getElementById('generate-btn');
-const numbersContainer = document.getElementById('numbers-container');
+const mainNumbersContainer = document.getElementById('main-numbers');
+const bonusNumberContainer = document.getElementById('bonus-number');
 const themeToggle = document.getElementById('theme-toggle');
 
 themeToggle.addEventListener('change', () => {
@@ -14,14 +15,16 @@ const ballColors = [
 ];
 
 generateBtn.addEventListener('click', () => {
-    numbersContainer.innerHTML = '';
+    mainNumbersContainer.innerHTML = '';
+    bonusNumberContainer.innerHTML = '';
     const numbers = new Set();
-    while (numbers.size < 6) {
+    while (numbers.size < 7) {
         const randomNumber = Math.floor(Math.random() * 45) + 1;
         numbers.add(randomNumber);
     }
 
     const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
+    const bonusNumber = sortedNumbers.pop();
 
     sortedNumbers.forEach(number => {
         const ball = document.createElement('div');
@@ -31,6 +34,15 @@ generateBtn.addEventListener('click', () => {
         const colorIndex = Math.floor(Math.random() * ballColors.length);
         ball.style.backgroundColor = ballColors[colorIndex];
         
-        numbersContainer.appendChild(ball);
+        mainNumbersContainer.appendChild(ball);
     });
+
+    const bonusBall = document.createElement('div');
+    bonusBall.classList.add('number-ball');
+    bonusBall.textContent = bonusNumber;
+    
+    const colorIndex = Math.floor(Math.random() * ballColors.length);
+    bonusBall.style.backgroundColor = ballColors[colorIndex];
+    
+    bonusNumberContainer.appendChild(bonusBall);
 });

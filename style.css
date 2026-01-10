@@ -92,12 +92,30 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
-.numbers-container {
+
+.lotto-numbers {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+}
+
+.main-numbers {
+    display: flex;
+    gap: 10px;
+}
+
+.plus-sign {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0 10px;
+}
+
+.bonus-number {
+    display: flex;
+    gap: 10px;
 }
 
 .number-ball {
